@@ -1,4 +1,3 @@
-// foo again
 public class CrapsGame
 {
 	private int point;
@@ -34,11 +33,11 @@ public class CrapsGame
 		// If point is 7 or 11, announce an immediate win for player,
 		// increment wins[steps], and return true indicating win
 		
-		if (point == 7 || point == 11)
+		if (isWinningPoint(point))
 		{
 			return winForPlayer(wins, steps);
 		}
-		else if (point==2 || point == 3 || point==12)
+		else if (isLosingPoint(point))
 		{
 			return lossForPlayer(losses, steps);
 		}
@@ -104,6 +103,16 @@ public class CrapsGame
 		return false;
 	}
 
+	private boolean isWinningPoint(int point) 
+	{
+		return (point == 7 || point == 11);
+	}
+	
+	private boolean isLosingPoint(int point)
+	{
+		return (point == 2 || point == 3 || point == 12);
+	}
+	
 	private boolean gameIsNotOver(int value)
 	{
 		return value != 7 && value != point;
