@@ -7,7 +7,7 @@
  * @author eric
  *
  */
-public class Dice
+public class PairOfDice
 {
 	// Instance fields (variables) may be declared anywhere in class body
 	// Convention: put at top
@@ -19,7 +19,7 @@ public class Dice
 	// Constructors (object initializers) also can be declared anywhere
 	// Convention: after instance fields/variables
 
-	public Dice()
+	public PairOfDice()
 	{
 		// initialize instance variables die1 and die2 by
 		// creating a new instance of each
@@ -29,7 +29,7 @@ public class Dice
 		this.roll();
 	}
 
-	public Dice(Die die1, Die die2) // overloaded constructor
+	public PairOfDice(Die die1, Die die2) // overloaded constructor
 	{
 		this.die1 = die1;
 		this.die2 = die2;
@@ -68,14 +68,14 @@ public class Dice
 
 	// static methods can go anywhere - but at end is standard
 
-	public static final int NUM_TRIALS = 360;
+	public static final int NUMBER_OF_TRIALS = 360;
 
 	public static void main(String[] args)
 	{
-		Dice dice1 = new Dice();
+		PairOfDice dice1 = new PairOfDice();
 		int snakeEyesCount = 0;
 
-		for (int i = 0; i < NUM_TRIALS; i++)
+		for (int i = 0; i < NUMBER_OF_TRIALS; i++)
 		{
 			dice1.roll();
 			StdOut.println(dice1);
@@ -85,6 +85,6 @@ public class Dice
 		}
 
 		StdOut.println("Actual count: " + snakeEyesCount);
-		StdOut.println("Expected count: " + (NUM_TRIALS / 36.0));
+		StdOut.println("Expected count: " + (NUMBER_OF_TRIALS / 36.0));
 	}
 }

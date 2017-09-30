@@ -1,7 +1,7 @@
 public class CrapsGame
 {
 	private int point;
-	private Dice dice;
+	private PairOfDice dice;
 	public static boolean showOutput = true;
 
 	public static void println(String str)
@@ -12,12 +12,12 @@ public class CrapsGame
 
 	public CrapsGame()
 	{
-		dice = new Dice();
+		dice = new PairOfDice();
 	}
 
 	public CrapsGame(Die die1, Die die2)
 	{
-		dice = new Dice(die1, die2);
+		dice = new PairOfDice(die1, die2);
 	}
 
 	public boolean playOneGame(int[] wins, int[] losses)
@@ -69,20 +69,6 @@ public class CrapsGame
 			}
 			while (gameIsNotOver(value));
 	
-			// the following is equivalent to the above.
-			// Is it easier to understand?
-			
-//			while (true)
-//			{
-//				dice.roll();
-//				value = dice.getLastRoll();
-//				println("Next roll is: " + value);
-//				if (value==7)
-//					break;
-//				if (value==point)
-//					break;
-//			}
-			
 			if (value==7)
 			{
 				// loss: record losses and return false

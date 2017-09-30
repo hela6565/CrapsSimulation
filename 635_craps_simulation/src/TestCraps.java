@@ -110,10 +110,9 @@ public class TestCraps
 			double wins = winForNumberOfStepsOf[numSteps];
 			double losses = lossSteps[numSteps];
 			double rolls = wins + losses;
-			double winRatio = rolls > 0 ? wins / rolls : 0.0;
 			
 			StdOut.println("(wins,losses) ending at " + numSteps + " roll" + ((numSteps > 1) ? "s" : "") + ": (" + winForNumberOfStepsOf[numSteps] + ","
-					+ lossSteps[numSteps] + ") -> " + winRatio);
+					+ lossSteps[numSteps] + ")");
 		}
 		
 		StdOut.println("\nPlayed " + numberOfPlays + " games total.");
@@ -132,18 +131,18 @@ public class TestCraps
 	 * simulation runs more quickly, then turn it back on to report the results
 	 */
 
-	public static final int NUM_TO_PLAY = 1000000;
+	public static final int GAMES_TO_PLAY = 1000000;
 	
 	public static void main(String[] args)
 	{
 		TestCraps test = new TestCraps();
 
-		StdOut.println("Starting simulation of " + NUM_TO_PLAY + " games...");
+		StdOut.println("Starting simulation of " + GAMES_TO_PLAY + " games...");
 
 		CrapsGame.showOutput = false; // turn off output to speed up
 		// simulation
 
-		test.play(NUM_TO_PLAY); // play games of craps
+		test.play(GAMES_TO_PLAY); // play games of craps
 
 		StdOut.println("Done.");
 
